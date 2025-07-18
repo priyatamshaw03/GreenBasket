@@ -114,8 +114,8 @@ const Navbar = () => {
         )}
       </div>
 
-      <div className="flex gap-7 items-center sm:hidden">
-        <div className="max-w-40 flex items-center justify-center">
+      <div className="flex gap-6 items-center sm:hidden">
+        <div className="max-w-26 flex items-center justify-center">
           <div className="flex items-center border border-gray-300 px-3 rounded-full focus-within:ring-1 focus-within:ring-green-400 transition-all">
             <input
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -162,11 +162,11 @@ const Navbar = () => {
             All Products
           </NavLink>
           {user && (
-            <NavLink to="/orders" onClick={() => setOpen(false)}>
+            <NavLink to="/my-orders" onClick={() => setOpen(false)}>
               My Orders
             </NavLink>
           )}
-          <NavLink to="/" onClick={() => setOpen(false)}>
+          <NavLink to="/contact" onClick={() => setOpen(false)}>
             Contact us
           </NavLink>
           {!user ? (

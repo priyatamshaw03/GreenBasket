@@ -9,7 +9,7 @@ const BottomBanner = () => {
         <img src={assets.bottom_banner_image_sm} alt="" className='w-full md:hidden'/>
         <div className='absolute inset-0 flex flex-col items-center md:items-end md:justify-center pt-16 md:pt-0 md:pr-20 lg:pr-52'>
           <div>
-            <h1 className='text-2xl md:text-3xl font-semibold text-green-500 mt-14 md:mt-0 mb-6'>Why we are the Best ?</h1>
+            <h1 className='text-2xl md:text-3xl font-semibold text-green-500 mb-6'>Why we are the Best ?</h1>
             {features.map((feature, index)=>(
               <div key={index} className='flex items-center gap-4 mt-2'>
                 <img src={feature.icon} alt="" className='md:w-11 w-9'/>

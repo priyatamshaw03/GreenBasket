@@ -12,7 +12,7 @@ const Banner = () => {
             <h1 className='text-4xl md:text-4xl lg:text-5xl font-bold text-center md:text-left max-w-78 md:max-w-80 lg:max-w-135 leading-tight lg:leading-16 '>Freshness you can Trust, Savings You will Love!</h1>
        
         <div className='flex items-center mt-6 font-medium'>
-            <Link to='/products' className='group flex items-center gap-2 px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition rounded-full text-white cursor-pointer mb-14 md:mb-0'>Shop now
+            <Link to='/products' className='group flex items-center gap-2 px-7 md:px-9 py-3 bg-green-500 hover:bg-green-600 transition rounded-full text-white cursor-pointer'>Shop now
             <img src={assets.white_arrow_icon} alt="" className='md:hidden transition group-focus:translate-x-1'/>
             </Link>
 
