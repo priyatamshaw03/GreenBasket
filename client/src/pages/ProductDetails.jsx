@@ -93,7 +93,7 @@ const ProductDetails = () => {
                         <ProductCard key={index} product={product}/>
                     ))}
                 </div>
-                <button onClick={()=> {navigate('/products'); scrollTo(0,0)}} className="mx-auto my-14 px-12 py-2.5 rounded-full cursor-pointer border text-green-500 hover:bg-green-500/10 transition">See more</button>
+                <button onClick={()=> {navigate(`/products/${product.category.toLowerCase()}`); scrollTo(0,0)}} className="mx-auto my-14 px-12 py-2.5 rounded-full cursor-pointer border text-green-500 hover:bg-green-500/10 transition">See more</button>
             </div>
         </div>
     );

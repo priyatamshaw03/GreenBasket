@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
       <NavLink to="/" onClick={() => setOpen(false)}>
-        <img src={assets.logo} alt="logo" className="h-9" />
+        <img src={assets.logo} alt="logo" className="h-7 md:h-10" />
       </NavLink>
 
       {/* Desktop Menu */}
@@ -114,12 +114,13 @@ const Navbar = () => {
         )}
       </div>
 
+{/* Mobile Menu */}
       <div className="flex gap-6 items-center sm:hidden">
-        <div className="max-w-26 flex items-center justify-center">
+        <div className="max-w-30 flex items-center justify-center">
           <div className="flex items-center border border-gray-300 px-3 rounded-full focus-within:ring-1 focus-within:ring-green-400 transition-all">
             <input
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
+            className="py-1.5 w-full bg-transparent outline-none text-sm placeholder-gray-500"
             type="text"
             placeholder="Search"
           />
@@ -148,12 +149,11 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div
           className={`${
             open ? "flex" : "hidden"
-          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden z-50`}
+          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-md md:hidden z-50`}
         >
           <NavLink to="/" onClick={() => setOpen(false)}>
             Home
@@ -161,21 +161,27 @@ const Navbar = () => {
           <NavLink to="/products" onClick={() => setOpen(false)}>
             All Products
           </NavLink>
-          {user && (
-            <NavLink to="/my-orders" onClick={() => setOpen(false)}>
-              My Orders
-            </NavLink>
-          )}
           <NavLink to="/contact" onClick={() => setOpen(false)}>
             Contact us
           </NavLink>
+
+          {user && (
+            <>
+            <NavLink to="/my-orders" onClick={() => setOpen(false)}>
+              My Orders
+            </NavLink>
+            <NavLink to="/edit-profile" onClick={() => setShowDropdown(false)}>
+              Edit Profile
+            </NavLink>
+            </>
+          )}
           {!user ? (
             <button
               onClick={() => {
                 setOpen(false);
                 setShowUserLogin(true);
               }}
-              className="cursor-pointer px-6 py-2 mt-2 bg-green-500 hover:bg-green-600 transition text-white rounded-full text-sm"
+              className="cursor-pointer px-6 py-1.5 mt-2 bg-green-500 hover:bg-green-600 transition text-white rounded-full text-md"
             >
               Login
             </button>

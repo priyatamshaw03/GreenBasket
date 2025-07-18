@@ -160,28 +160,11 @@ export const footerLinks = [
     links: [
       { text: "Home", url: "/" },
       { text: "Best Sellers", url: "/" },
-      { text: "Offers & Deals", url: "/" },
-      { text: "FAQs", url: "#" },
-    ],
-  },
-  {
-    title: "Need help?",
-    links: [
+      { text: "All Products", url: "/products" },
       { text: "Delivery Information", url: "/orders" },
-      { text: "Return & Refund Policy", url: "#" },
-      { text: "Payment Methods", url: "/cart" },
-      { text: "Track your Order", url: "/orders" },
       { text: "Contact Us", url: "/contact" },
     ],
   },
-  {
-    title: "Get in touch",
-    links: [
-      { text: "+91 9876543210", url: "#" },
-      { text: "greenbasket@gmail.com", url: "#" },
-    ],
-  },
-
 ];
 
 export const features = [

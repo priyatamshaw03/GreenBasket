@@ -5,8 +5,8 @@ import jwt from "jsonwebtoken";
 export const sellerLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log("Email->",email);
-    console.log("password->",password);
+    console.log("Email-> ",email);
+    console.log("Password-> ",password);
     console.log(process.env.SELLER_EMAIL);
 
     if (password === process.env.SELLER_PASSWORD && email === process.env.SELLER_EMAIL) {
@@ -15,7 +15,7 @@ export const sellerLogin = async (req, res) => {
       res.cookie('sellerToken', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV === 'production' ? 'node' : 'strict',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
         maxAge: 7 * 24 * 60 * 60 * 1000,
       });
 

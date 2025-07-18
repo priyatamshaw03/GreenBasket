@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
+import { assets } from "../../assets/assets";
 
 const Sellerlogin = () => {
   const { isSeller, setIsSeller, navigate, axios} = useAppContext();
@@ -32,8 +33,11 @@ const Sellerlogin = () => {
 
   return !isSeller && (
       <form onSubmit={onSubmithandler}
-        className="min-h-screen flex items-center text-sm text-gray-600">
+        className="flex items-center fixed top-0 bottom-0 left-0 right-0 text-sm text-gray-600">
         <div className="flex flex-col gap-4 m-auto items-start p-8 py-12 min-w-80 sm:min-w-88 rounded-xl shadow-xl border border-gray-200 bg-white/40">
+        <div className="flex flex-col items-center m-auto">
+                <img src={assets.logo} alt="logo" className="h-10"/>
+                </div>
           <p className="text-3xl font-medium m-auto">
             <span className="text-green-500">Seller </span>Login
           </p>

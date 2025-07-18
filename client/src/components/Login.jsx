@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 const Login = () => {
 
   const {setShowUserLogin, setUser, axios, navigate}=useAppContext()
+
   const [state, setState] = useState("login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,10 +38,11 @@ const Login = () => {
     <div onClick={()=> setShowUserLogin(false)} className="flex items-center fixed top-0 bottom-0 left-0 right-0 z-30 text-sm text-gray-600 bg-black/50 backdrop-blur-xs">
 
       <form onSubmit={handleSubmit} onClick={(e)=> e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-xl shadow-xl border border-gray-200 bg-white">
-        <div className="flex items-center justify-center">
-        <img src={assets.logo} alt="logo" className=""/>
+        <div className="flex flex-col items-center m-auto">
+        <img src={assets.logo} alt="logo" className="h-10"/>
         </div>
-        <p className="text-3xl font-medium m-auto text-green-500">
+        <p className="text-3xl font-medium m-auto">
+          <span className="text-green-500">User </span>
           {state === "login" ? "Login" : "Sign Up"}
         </p>
         {state === "register" && (
