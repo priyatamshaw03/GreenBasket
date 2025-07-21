@@ -73,6 +73,7 @@ import googleFavicon from "./googleFavicon.png";
 import user_icon from "./user_icon.svg"
 import email_icon from "./email_icon.svg"
 import contact_us from "./contact_us.svg"
+import emptyCartIcon from "./emptyCartIcon.png"
 
 export const assets = {
   user_icon,
@@ -87,6 +88,7 @@ export const assets = {
   cart_icon,
   nav_cart_icon,
   add_icon,
+  emptyCartIcon,
   refresh_icon,
   product_list_icon,
   order_icon,
@@ -159,9 +161,9 @@ export const footerLinks = [
     title: "Quick Links",
     links: [
       { text: "Home", url: "/" },
-      { text: "Best Sellers", url: "/" },
+      { text: "Best Sellers", url: "#bestseller" },
       { text: "All Products", url: "/products" },
-      { text: "Delivery Information", url: "/orders" },
+      { text: "Delivery Information", url: "/my-orders" },
       { text: "Contact Us", url: "/contact" },
     ],
   },

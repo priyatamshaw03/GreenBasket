@@ -37,7 +37,7 @@ const MyOrders = () => {
           <p className="flex justify-between md:items-center text-gray-400 md:font-medium max-md:flex-col">
             <span>OrderId : {order._id}</span>
             <span>Payment : {order.paymentType}</span>
-            <span>
+            <span className="text-green-500 text-lg font-medium">
               Total Amount : {currency}
               {order.amount}
             </span>
@@ -70,7 +70,7 @@ const MyOrders = () => {
                 <p>Status : {order.status}</p>
                 <p>Date : {new Date(order.createdAt).toLocaleDateString()}</p>
               </div>
-              <p className="text-green-500 text-lg font-medium">
+              <p className="text-black/60 text-lg font-medium">
                 Amount : {currency}
                 {item.product.offerPrice * item.quantity}
               </p>
