@@ -74,12 +74,16 @@ import user_icon from "./user_icon.svg"
 import email_icon from "./email_icon.svg"
 import contact_us from "./contact_us.svg"
 import emptyCartIcon from "./emptyCartIcon.png"
+import hero from "./hero.png"
+import hero1 from "./hero1.png"
 
 export const assets = {
   user_icon,
   email_icon,
   contact_us,
   logo,
+  hero,
+  hero1,
   search_icon,
   remove_icon,
   arrow_right_icon_colored,
@@ -161,7 +165,7 @@ export const footerLinks = [
     title: "Quick Links",
     links: [
       { text: "Home", url: "/" },
-      { text: "Best Sellers", url: "#bestseller" },
+      { text: "About", url: "/about" },
       { text: "All Products", url: "/products" },
       { text: "Delivery Information", url: "/my-orders" },
       { text: "Contact Us", url: "/contact" },
