@@ -134,13 +134,6 @@ export const categories = [
     bgColor: "#F0F5DE",
   },
   {
-    text: "Instant Food",
-    path: "Instant",
-    image: maggi_image,
-    bgColor: "#E1F5EC",
-  },
-  
-  {
     text: "Dairy Products",
     path: "Dairy",
     image: dairy_product_image,
@@ -151,6 +144,12 @@ export const categories = [
     path: "Bakery",
     image: bakery_image,
     bgColor: "#E0F6FE",
+  },
+  {
+    text: "Instant Food",
+    path: "Instant",
+    image: maggi_image,
+    bgColor: "#E1F5EC",
   },
   {
     text: "Grains & Cereals",
@@ -165,7 +164,7 @@ export const footerLinks = [
     title: "Quick Links",
     links: [
       { text: "Home", url: "/" },
-      { text: "About", url: "/about" },
+      { text: "About", url: "/" },
       { text: "All Products", url: "/products" },
       { text: "Delivery Information", url: "/my-orders" },
       { text: "Contact Us", url: "/contact" },
