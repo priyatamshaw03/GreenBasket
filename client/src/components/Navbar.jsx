@@ -52,6 +52,9 @@ const Navbar = () => {
         <NavLink className="hover:text-green-500 transition" to="/products">
           All Products
         </NavLink>
+        <NavLink className="hover:text-green-500 transition" to="/about">
+          About
+        </NavLink>
         <NavLink className="hover:text-green-500 transition" to="/contact">
           Contact
         </NavLink>
@@ -160,6 +163,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink to="/products" onClick={() => setOpen(false)}>
             All Products
+          </NavLink>
+          <NavLink to="/about" onClick={() => setOpen(false)}>
+            About
           </NavLink>
           <NavLink to="/contact" onClick={() => setOpen(false)}>
             Contact us

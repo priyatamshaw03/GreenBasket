@@ -18,6 +18,7 @@ import AddProduct from "./pages/seller/AddProduct"
 import ProductList from "./pages/seller/ProductList"
 import Orders from "./pages/seller/Orders"
 import EditProfile from "./pages/EditProfile"
+import About from "./pages/About"
 
 
 
@@ -43,12 +44,12 @@ function App() {
           <Route path="/my-orders" element={<MyOrders/>}/>
           <Route path="/edit-profile" element={<EditProfile/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/about" element={<About/>}/>
           <Route path="/seller" element={isSeller ? <SellerLayout/> : <Sellerlogin/>}>
             <Route index element={isSeller ? <AddProduct/> : null}/>
             <Route path="product-list" element={<ProductList/>}/>
             <Route path="orders" element={<Orders/>}/>
             </Route>
-
         </Routes>
       </div>
       {!isSellerPath && <Footer/>}
