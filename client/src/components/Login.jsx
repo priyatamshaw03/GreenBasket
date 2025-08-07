@@ -22,7 +22,7 @@ const Login = () => {
       const {data} = await axios.post(`/api/user/${state}`, {name, email, password})
       if(data.success){
         setUser(data.user)
-        toast.success('Logged in')
+        toast.success('Login Successful')
         navigate('/')
         setShowUserLogin(false)
       }
@@ -39,11 +39,12 @@ const Login = () => {
 
       <form onSubmit={handleSubmit} onClick={(e)=> e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-xl shadow-xl border border-gray-200 bg-white">
         <div className="flex flex-col items-center m-auto">
-        <img src={assets.logo} alt="logo" className="h-10"/>
+        <img src={assets.logo} alt="logo" className="h-9"/>
         </div>
-        <p className="text-3xl font-medium m-auto">
-          <span className="text-green-500">User </span>
-          {state === "login" ? "Login" : "Sign Up"}
+        <p className="text-2xl font-medium m-auto text-green-500">
+          
+          {state === "login" ? "Login"  : "Create Your Account"}
+          
         </p>
         {state === "register" && (
           <div className="w-full">
@@ -87,7 +88,7 @@ const Login = () => {
               onClick={() => setState("login")}
               className="text-green-500 cursor-pointer"
             >
-              signin
+              login
             </span>
           </p>
         ) : (
@@ -104,7 +105,7 @@ const Login = () => {
         <button className="bg-green-500 hover:bg-green-600 transition-all text-white w-full py-2.5 rounded-full cursor-pointer">
           {state === "register" ? "Create Account" : "Login"}
         </button>
-        {state === "login" && (
+        {/* {state === "login" && (
           <>
             <div className="flex items-center gap-4 w-full my-2">
               <div className="w-full h-px bg-gray-300/90"></div>
@@ -126,7 +127,7 @@ const Login = () => {
               Google
             </button>
           </>
-        )}
+        )} */}
       </form>
     </div>
   );

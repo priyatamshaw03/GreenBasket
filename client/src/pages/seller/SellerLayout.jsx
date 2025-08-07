@@ -17,7 +17,7 @@ const SellerLayout = () => {
         try {
             const {data} = await axios.get('/api/seller/logout')
             if(data.success){
-                toast.success(data.message)
+                toast.success("Logout Successful");
                 navigate("/")
             }
             else{

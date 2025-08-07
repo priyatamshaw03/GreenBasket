@@ -3,9 +3,9 @@ import React from "react";
 const About = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 text-gray-800">
-      <h1 className="text-4xl font-bold text-green-600 mb-6">About GreenBasket</h1>
+      <h1 className="text-4xl text-center font-bold text-green-500 mb-6">About GreenBasket</h1>
       <p className="text-lg mb-10">
-        <strong>Fresh. Fast. Friendly.</strong> Welcome to <strong>GreenBasket</strong>, your trusted online destination for fresh groceries and everyday essentials.
+        Welcome to <strong>GreenBasket</strong>, your trusted online destination for fresh groceries and everyday essentials.
       </p>
 
       <section className="mb-10">
@@ -52,7 +52,7 @@ const About = () => {
         </p>
       </section>
 
-      <p className="text-xl font-semibold text-green-600 mt-8">
+      <p className="text-xl font-semibold text-green-500 mt-8">
         GreenBasket — Eat Fresh. Live Green.
       </p>
     </div>

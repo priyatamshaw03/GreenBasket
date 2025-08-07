@@ -259,17 +259,17 @@ const Cart = () => {
             <span className="text-green-600">Free</span>
           </p>
           <p className="flex justify-between">
-            <span>Tax (5%)</span>
+            <span>Handling Fee</span>
             <span>
               {currency}
-              {(getCartamount() * 5) / 100}
+              {5}
             </span>
           </p>
           <p className="flex justify-between text-lg font-medium mt-3">
             <span>Total Amount :</span>
             <span>
               {currency}
-              {getCartamount() + (getCartamount() * 5) / 100}
+              {getCartamount() + 5}
             </span>
           </p>
         </div>

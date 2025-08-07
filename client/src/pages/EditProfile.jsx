@@ -70,7 +70,7 @@ const EditProfile = () => {
 
   return (
     <div className="max-w-xl mx-auto py-10">
-      <h2 className="text-2xl font-semibold mb-6 text-center text-green-500">Edit Profile</h2>
+      <h2 className="text-3xl font-semibold mb-6 text-center text-green-500">Edit Profile</h2>
       <form onSubmit={handleSubmit} className="space-y-5" encType="multipart/form-data">
         <div className="flex items-center gap-6">
           <img

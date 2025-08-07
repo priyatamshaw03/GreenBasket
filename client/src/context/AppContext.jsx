@@ -50,17 +50,16 @@ export const AppContextProvider = ({ children }) => {
   // fetch user auth status ,user Data and cart items
   const fetchUser = async () => {
     try {
-            const {data} = await axios.get('/api/user/is-auth');
-            if(data.success){
-              setUser(data.user)
-              setCartitems(data.user.cartitems)
-            }
-        } catch (error) {
-            setUser(null)
-            
-        } 
-  }
-  
+      const { data } = await axios.get("/api/user/is-auth");
+      if (data.success) {
+        setUser(data.user);
+        setCartitems(data.user.cartitems);
+      }
+    } catch (error) {
+      setUser(null);
+    }
+  };
+
   //add product to cart
   const addTocart = (itemId) => {
     let cartData = structuredClone(cartitems);
@@ -79,17 +78,14 @@ export const AppContextProvider = ({ children }) => {
     setCartitems(cartData);
     toast.success("Cart updated");
   };
-  //add product to cart
+  //renove product from cart
   const removeFromcart = (itemId) => {
     let cartData = structuredClone(cartitems);
     if (cartData[itemId]) {
-      cartData[itemId] -= 1;
-      if (cartData[itemId] === 0) {
-        delete cartData[itemId];
-      }
+      delete cartData[itemId]; // Directly remove the item
+      toast.success("Removed from Cart");
+      setCartitems(cartData);
     }
-    toast.success("Removed from Cart");
-    setCartitems(cartData);
   };
   //cart item count
   const getCartCount = () => {
@@ -121,22 +117,42 @@ export const AppContextProvider = ({ children }) => {
   useEffect(() => {
     const updateCart = async () => {
       try {
-        const { data } = await axios.post("/api/cart/update", { cartitems })
+        const { data } = await axios.post("/api/cart/update", { cartitems });
         if (!data.success) {
           toast.error(data.message);
         }
       } catch (error) {
         toast.error(error.message);
       }
-    }
+    };
 
     if (user) {
-      updateCart()
+      updateCart();
     }
-  }, [cartitems])
+  }, [cartitems]);
 
-  const value = {navigate, user, setUser, setIsSeller, isSeller,
-    showuserlogin, setShowUserLogin, products, currency, addTocart, updateCartitem, removeFromcart, cartitems, searchQuery, setSearchQuery, getCartamount, getCartCount, axios, fetchProducts, setCartitems}
+  const value = {
+    navigate,
+    user,
+    setUser,
+    setIsSeller,
+    isSeller,
+    showuserlogin,
+    setShowUserLogin,
+    products,
+    currency,
+    addTocart,
+    updateCartitem,
+    removeFromcart,
+    cartitems,
+    searchQuery,
+    setSearchQuery,
+    getCartamount,
+    getCartCount,
+    axios,
+    fetchProducts,
+    setCartitems,
+  };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

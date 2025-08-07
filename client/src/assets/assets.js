@@ -159,6 +159,7 @@ export const categories = [
   },
 ];
 
+
 export const footerLinks = [
   {
     title: "Quick Links",

@@ -72,3 +72,18 @@ export const deleteProduct = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 }
+
+export const updateProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedData = req.body;
+
+    const product = await Product.findByIdAndUpdate(id, updatedData, { new: true });
+    if (!product) return res.json({ success: false, message: "Product not found" });
+
+    res.json({ success: true, message: "Product updated successfully!", product });
+  } catch (error) {
+    console.log(error.message);
+    res.json({ success: false, message: error.message });
+  }
+};

@@ -14,7 +14,7 @@ const authUser = async (req, res, next) => {
       next();
        
     } else {
-      return res.json({ success: false, message: 'Not Authorized' });
+      return res.json({ success: false, message: 'Access denied!' });
     }
   } catch (error) {
     res.json({ success: false, message: error.message });

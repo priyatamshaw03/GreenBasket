@@ -5,12 +5,10 @@ const Footer = () => {
   return (
     <footer className=" px-6 md:px-16 lg:px-24 xl:px-32 pt-8 mt-24 w-full bg-green-500/10 text-gray-500">
       <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500/30 pb-6">
-        <div className="md:max-w-96">
+        <div className="md:max-w-150">
           <img className="h-9" src={assets.logo} alt="Logo" />
-          <p className="mt-6 text-sm">
-            We deliver fresh groceries and snacks straight to your door. Trusted
-            by thousands of customers, we aim to make your shopping experience
-            simple and affordable.
+          <p className="mt-6 text-sm md:text-base w-full">
+            Experience the smarter way to shop groceries online. We deliver fresh groceries and snacks straight to your door. Trusted by thousands of customers, we aim to make your shopping experience simple and affordable.
           </p>
           <div className="flex items-center gap-4 mt-6 text-green-500">
             <a
@@ -60,26 +58,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a
-              href="#"
-              className="hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6M6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+            
             <a
               href="#"
               className="hover:-translate-y-0.5 transition-all duration-300"
@@ -100,33 +79,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a
-              href="#"
-              className="hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9 18c-4.51 2-5-2-7-2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+            
           </div>
         </div>
         <div className="flex-1 flex items-start md:justify-end gap-20">
@@ -155,7 +108,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="py-4 text-center text-sm md:text-base text-gray-500/80">
+      <p className="py-4 text-center text-sm text-gray-500/80">
         Copyright {new Date().getFullYear()} © GreenBasket. All Right Reserved.
       </p>
     </footer>

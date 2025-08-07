@@ -43,7 +43,7 @@ const ProductList = () => {
           <table className="md:table-auto table-fixed w-full overflow-hidden">
             <thead className="text-gray-900 text-sm text-left">
               <tr>
-                <th className="px-4 py-3 font-semibold truncate">Product</th>
+                <th className="px-4 py-3 font-semibold truncate">Products Name</th>
                 <th className="px-4 py-3 font-semibold truncate">Category</th>
                 <th className="px-4 py-3 font-semibold truncate hidden md:block">
                   Selling Price
@@ -91,7 +91,7 @@ const ProductList = () => {
                   <td className="px-4 py-3 max-sm:hidden">
                     <button
                       onClick={() => handleDelete(product._id)}
-                      className="text-red-600 hover:text-red-700 text-sm underline cursor-pointer"
+                      className="text-red-500 text-sm cursor-pointer bg-red-600/10 hover:bg-red-600/20 rounded-full px-3 py-1"
                     >
                       Delete
                     </button>

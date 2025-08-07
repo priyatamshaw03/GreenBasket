@@ -32,7 +32,7 @@ const MyOrders = () => {
 
     {/* ✅ Show message if there are no orders */}
     {myOrders.length === 0 ? (
-      <p className="text-green-500 text-lg md:text-5xl flex justify-center text-center min-h-50 items-center ">No orders yet!</p>
+      <p className="text-green-500 text-lg md:text-4xl flex justify-center text-center min-h-50 items-center ">No orders yet!</p>
     ) : (
       myOrders.map((order, index) => (
         <div
