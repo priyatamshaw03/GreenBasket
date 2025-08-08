@@ -69,6 +69,7 @@ import vanilla_muffins_image from "./vanilla_muffins_image.png";
 import quinoa_image from "./quinoa_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import barley_image from "./barley_image.png";
+import masala_spices from "./masala_spices.png";
 import googleFavicon from "./googleFavicon.png";
 import user_icon from "./user_icon.svg"
 import email_icon from "./email_icon.svg"
@@ -128,7 +129,7 @@ export const categories = [
     bgColor: "#FEE0E0",
   },
   {
-    text: "Cold Drinks",
+    text: "Soft Drinks",
     path: "Drinks",
     image: bottles_image,
     bgColor: "#F0F5DE",
@@ -146,7 +147,7 @@ export const categories = [
     bgColor: "#E0F6FE",
   },
   {
-    text: "Instant Food",
+    text: "Packaged Food",
     path: "Instant",
     image: maggi_image,
     bgColor: "#E1F5EC",
@@ -157,6 +158,12 @@ export const categories = [
     image: grain_image,
     bgColor: "#F1E3F9",
   },
+  {
+    text: "Masala & Spices",
+    path: "Masala",
+    image: masala_spices,
+    bgColor: "#FEE6BE",
+  }
 ];
 
 
