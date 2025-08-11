@@ -43,15 +43,13 @@ const ProductList = () => {
           <table className="md:table-auto table-fixed w-full overflow-hidden">
             <thead className="text-gray-900 text-sm text-left">
               <tr>
-                <th className="px-4 py-3 font-semibold truncate">Products Name</th>
+                <th className="px-4 py-3 font-semibold truncate">Products</th>
                 <th className="px-4 py-3 font-semibold truncate">Category</th>
                 <th className="px-4 py-3 font-semibold truncate hidden md:block">
-                  Selling Price
+                  Price
                 </th>
-                <th className="px-4 py-3 font-semibold truncate">In Stock</th>
-                <th className="px-4 py-3 font-semibold truncate hidden md:block">
-                  Action
-                </th>
+                <th className="px-4 py-3 font-semibold truncate">Stock</th>
+                <th className="px-4 py-3 font-semibold truncate">Action</th>
               </tr>
             </thead>
             <tbody className="text-sm text-gray-500">
@@ -88,7 +86,7 @@ const ProductList = () => {
                       <span className="dot absolute left-1 top-1 w-5 h-5 bg-white rounded-full transition-transform duration-200 ease-in-out peer-checked:translate-x-5"></span>
                     </label>
                   </td>
-                  <td className="px-4 py-3 max-sm:hidden">
+                  <td className="px-4 py-3">
                     <button
                       onClick={() => handleDelete(product._id)}
                       className="text-red-500 text-sm cursor-pointer bg-red-600/10 hover:bg-red-600/20 rounded-full px-3 py-1"

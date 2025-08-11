@@ -147,7 +147,7 @@ export const categories = [
     bgColor: "#E0F6FE",
   },
   {
-    text: "Packaged Food",
+    text: "Instant Food",
     path: "Instant",
     image: maggi_image,
     bgColor: "#E1F5EC",
