@@ -12,7 +12,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-4 mt-6 text-green-500">
             <a
-              href="#"
+              href="https://www.facebook.com" target="_blank"
               className="hover:-translate-y-0.5 transition-all duration-300"
             >
               <svg
@@ -32,7 +32,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com" target="_blank"
               className="hover:-translate-y-0.5 transition-all duration-300"
             >
               <svg
@@ -60,7 +60,7 @@ const Footer = () => {
             </a>
             
             <a
-              href="#"
+              href="https://x.com" target="_blank"
               className="hover:-translate-y-0.5 transition-all duration-300"
             >
               <svg

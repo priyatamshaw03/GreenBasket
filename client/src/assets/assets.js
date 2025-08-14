@@ -7,6 +7,7 @@ import star_dull_icon from "./star_dull_icon.svg";
 import cart_icon from "./cart_icon.svg";
 import nav_cart_icon from "./nav_cart_icon.svg";
 import add_icon from "./add_icon.svg";
+import dashboard_icon from "./dashboard_icon.svg";
 import refresh_icon from "./refresh_icon.svg";
 import product_list_icon from "./product_list_icon.svg";
 import order_icon from "./order_icon.svg";
@@ -73,17 +74,27 @@ import masala_spices from "./masala_spices.png";
 import googleFavicon from "./googleFavicon.png";
 import user_icon from "./user_icon.svg"
 import email_icon from "./email_icon.svg"
+import delete_icon from "./delete_icon.svg"
+import money from "./money.svg"
+import user from "./user.svg"
+import pendingicon from "./pendingicon.svg"
 import contact_us from "./contact_us.svg"
 import emptyCartIcon from "./emptyCartIcon.png"
 import hero from "./hero.png"
 import hero1 from "./hero1.png"
+import excitedWomenImage from "./excitedWomenImage.png"
 
 export const assets = {
   user_icon,
   email_icon,
   contact_us,
   logo,
+  user,
+  pendingicon,
+  money,
+  excitedWomenImage,
   hero,
+  delete_icon,
   hero1,
   search_icon,
   remove_icon,
@@ -93,6 +104,7 @@ export const assets = {
   cart_icon,
   nav_cart_icon,
   add_icon,
+  dashboard_icon,
   emptyCartIcon,
   refresh_icon,
   product_list_icon,
