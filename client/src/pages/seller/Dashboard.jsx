@@ -51,7 +51,7 @@ const Dashboard = () => {
         {/* Total Bookings */}
         <div className="bg-white shadow rounded-xl p-5 flex items-center gap-4 border border-gray-100">
           <div className="bg-blue-100 text-blue-600 p-3 rounded-full">
-            <img src={assets.cart_icon} alt="orders" className="w-6 h-6" />
+            <img src={assets.parcel_icon} alt="orders" className="w-6 h-6" />
           </div>
           <div>
             <p className="text-gray-500">Total Orders</p>
