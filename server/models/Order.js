@@ -22,6 +22,12 @@ const orderSchema = new mongoose.Schema(
       ref: "address",
     },
 
+    status: {
+      type: String,
+      enum: ["Order Placed", "Shipped", "Out for Delivery", "Delivered", "Cancelled"],
+      default: "Order Placed",
+    },
+
     status: { type: String, default: "Order Placed" },
     paymentType: { type: String, required: true },
     isPaid: { type: Boolean, required: true, default: false },

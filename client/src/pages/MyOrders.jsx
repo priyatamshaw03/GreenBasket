@@ -47,6 +47,46 @@ const MyOrders = () => {
               {order.amount}
             </span>
           </p>
+          <div className="mt-2 flex items-center flex-wrap">
+  <p className="font-medium text-black/70 pr-4">Order Status:</p>
+  <div className="flex items-center mt-1 flex-wrap">
+    {(order.status === "Cancelled"
+      ? ["Cancelled"] // show only cancelled
+      : ["Order Placed", "Out for Delivery", "Delivered"] // normal flow
+    ).map((step, i, steps) => {
+      const currentIndex = steps.indexOf(order.status);
+
+      return (
+        <div key={i} className="flex items-center">
+          <div
+            className={`w-4 h-4 rounded-full ${
+              order.status === "Cancelled"
+                ? "bg-red-500"
+                : i <= currentIndex
+                ? "bg-green-500"
+                : "bg-gray-300"
+            }`}
+          ></div>
+          <span
+            className={`ml-1 text-sm ${
+              order.status === "Cancelled"
+                ? "text-red-600 font-medium"
+                : i <= currentIndex
+                ? "text-green-600 font-medium"
+                : "text-gray-400"
+            }`}
+          >
+            {step}
+          </span>
+          {i < steps.length - 1 && (
+            <div className="w-4 h-[2px] bg-gray-300 mx-2"></div>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>
+
 
           {order.items.map((item, index) =>
             item.product ? (
@@ -74,8 +114,10 @@ const MyOrders = () => {
 
                 <div className="flex flex-col justify-center md:ml-8 mb-4 md:mb-0">
                   <p>Quantity : {item.quantity || "1"}</p>
-                  <p>Status : {order.status}</p>
+                  {/* <p>Status : {order.status}</p> */}
                   <p>Date : {new Date(order.createdAt).toLocaleDateString()}</p>
+
+                  
                 </div>
                 <p className="text-black/60 text-lg font-medium">
                   Amount : {currency}

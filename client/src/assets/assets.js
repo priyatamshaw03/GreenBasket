@@ -78,6 +78,7 @@ import email_icon from "./email_icon.svg"
 import delete_icon from "./delete_icon.svg"
 import money from "./money.svg"
 import user from "./user.svg"
+import home from "./home.svg"
 import pendingicon from "./pendingicon.svg"
 import contact_us from "./contact_us.svg"
 import emptyCartIcon from "./emptyCartIcon.png"
@@ -91,6 +92,7 @@ export const assets = {
   contact_us,
   logo,
   user,
+  home,
   pendingicon,
   money,
   excitedWomenImage,

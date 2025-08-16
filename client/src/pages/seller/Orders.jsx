@@ -21,6 +21,21 @@ const Orders = () => {
             toast.error(error.message)
         }
     }
+
+    const updateStatus = async (orderId, status) => {
+    try {
+      const { data } = await axios.put(`/api/order/status/${orderId}`, { status });
+      if (data.success) {
+        toast.success("Status updated!");
+        fetchOrders();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  }
+
     useEffect(()=>{
         fetchOrders();
     },[])
@@ -31,7 +46,7 @@ const Orders = () => {
             <h2 className="text-lg font-medium">Orders List</h2>
             
             {orders.map((order, index) => (
-                <div key={index} className="flex flex-col md:flex-row justify-between md:items-center gap-5 p-5 max-w-4xl rounded-md border border-gray-300">
+                <div key={index} className="flex flex-col md:flex-row justify-between md:items-center gap-5 p-5 max-w-5xl rounded-md border border-gray-300">
                     <div className="flex gap-5 max-w-80">
                         <img className="w-14 h-14 object-cover " src={assets.box_icon} alt="boxIcon" />
                         <div>
@@ -60,6 +75,20 @@ const Orders = () => {
                         <p>Date: {new Date(order.createdAt).toLocaleDateString()}</p>
                         <p>Payment: {order.isPaid ? "Paid" : "Pending"}</p>
                     </div>
+
+                    <div>
+                <label className="font-medium text-black/70">Order Status: </label>
+                <select
+                  value={order.status}
+                  onChange={(e) => updateStatus(order._id, e.target.value)}
+                  className="ml-1 p-1 border rounded-md text-sm"
+                >
+                  <option value="Order Placed">Order Placed</option>
+                  <option value="Out for Delivery">Out for Delivery</option>
+                  <option value="Delivered">Delivered</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
                 </div>
             ))}
         </div>
