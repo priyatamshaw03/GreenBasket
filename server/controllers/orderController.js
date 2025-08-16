@@ -1,4 +1,4 @@
-import User from '../models/User.js'
+import User from "../models/User.js";
 import Product from "../models/Product.js";
 import Order from "../models/Order.js";
 //import stripe from 'stripe'
@@ -9,16 +9,16 @@ export const placeOrder = async (req, res) => {
     // const { userId, items, address } = req.body;
 
     const userId = req.userId;
-    const { items, address} = req.body;
+    const { items, address } = req.body;
 
     if (!address || items.length === 0) {
-      return res.json({ success: false, message: "Invalid data" })
+      return res.json({ success: false, message: "Invalid data" });
     }
     // Calculate Amount Using Items
     let amount = await items.reduce(async (acc, item) => {
       const product = await Product.findById(item.product);
       return (await acc) + product.offerPrice * item.quantity;
-    }, 0)
+    }, 0);
 
     //Add tax Charge(5%)
     amount = amount + 5;
@@ -31,11 +31,11 @@ export const placeOrder = async (req, res) => {
       paymentType: "COD",
     });
 
-    return res.json({ success: true, message: " Order Placed Successfully" })
+    return res.json({ success: true, message: " Order Placed Successfully" });
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
-}
+};
 
 // Get Orders by User ID : /api/order/user
 export const getUserOrders = async (req, res) => {
@@ -44,27 +44,29 @@ export const getUserOrders = async (req, res) => {
     const userId = req.userId; // update here
     const orders = await Order.find({
       userId,
-      $or: [{ paymentType: "COD" }, { isPaid: true }]
-    }).populate("items.product address").sort({ createdAt: -1 });
+      $or: [{ paymentType: "COD" }, { isPaid: true }],
+    })
+      .populate("items.product address")
+      .sort({ createdAt: -1 });
     res.json({ success: true, orders });
   } catch (error) {
     res.json({ success: false, message: error.message });
   }
-}
+};
 
 // Get All Orders (for seller / admin):/api/order/seller
 export const getAllOrders = async (req, res) => {
   try {
-    
     const orders = await Order.find({
-      $or: [{ paymentType: "COD" }, { isPaid: true }]
-    }).populate("items.product address").sort({ createdAt: -1 });
+      $or: [{ paymentType: "COD" }, { isPaid: true }],
+    })
+      .populate("items.product address")
+      .sort({ createdAt: -1 });
     res.json({ success: true, orders });
-
   } catch (error) {
     res.json({ success: false, message: error.message });
   }
-}
+};
 
 // Update Order Status: /api/order/status/:id
 export const updateOrderStatus = async (req, res) => {
@@ -74,7 +76,9 @@ export const updateOrderStatus = async (req, res) => {
 
     const order = await Order.findById(id);
     if (!order) {
-      return res.status(404).json({ success: false, message: "Order not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Order not found" });
     }
 
     order.status = status;
