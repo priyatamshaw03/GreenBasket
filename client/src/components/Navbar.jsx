@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
@@ -6,7 +6,9 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
-  const [profileOpen, setProfileOpen] = React.useState(false); // for mobile profile menu
+  const [profileOpen, setProfileOpen] = React.useState(false); // mobile profile dropdown
+  const profileRef = useRef(null); // reference for profile dropdown
+
   const {
     user,
     setUser,
@@ -38,6 +40,25 @@ const Navbar = () => {
       navigate("/products");
     }
   }, [searchQuery]);
+
+  // Close profile dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setProfileOpen(false);
+      }
+    };
+
+    if (profileOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [profileOpen]);
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white transition-all">
@@ -174,12 +195,12 @@ const Navbar = () => {
           {!user ? (
             <button
               onClick={() => setShowUserLogin(true)}
-              className="cursor-pointer text-sm bg-green-500 items-center text-white px-3 py-1 rounded-full"
+              className="cursor-pointer text-sm bg-green-500 text-white px-4 py-1.5 rounded-full"
             >
               Login
             </button>
           ) : (
-            <div className="relative">
+            <div className="relative" ref={profileRef}>
               <img
                 src={assets.profile_icon}
                 alt="profile"
@@ -222,27 +243,48 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu (Hamburger) */}
-      {open && (
-        <div
-          className={`${
-            open ? "flex" : "hidden"
-          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-md md:hidden z-50`}
-        >
-          <NavLink to="/" onClick={() => setOpen(false)}>
-            Home
-          </NavLink>
-          <NavLink to="/products" onClick={() => setOpen(false)}>
-            All Products
-          </NavLink>
-          <NavLink to="/about" onClick={() => setOpen(false)}>
-            About
-          </NavLink>
-          <NavLink to="/contact" onClick={() => setOpen(false)}>
-            Contact us
-          </NavLink>
-        </div>
-      )}
+      {/* Mobile Sidebar Menu */}
+{open && (
+  <>
+    {/* Overlay (click outside to close) */}
+    <div
+      className="fixed inset-0 bg-black/40 z-40"
+      onClick={() => setOpen(false)}
+    ></div>
+
+    {/* Sidebar */}
+    <div
+      className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6 transform transition-transform duration-300 ease-in-out ${
+        open ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
+      {/* Close Button */}
+      <div className="flex justify-between items-center mb-6">
+        <img src={assets.logo} alt="logo" className="h-8" />
+        <button onClick={() => setOpen(false)}>
+          <img src={assets.close_icon} alt="close" className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Menu Links */}
+      <nav className="flex flex-col py-4 gap-4 text-md">
+        <NavLink to="/" onClick={() => setOpen(false)}>
+          Home
+        </NavLink>
+        <NavLink to="/products" onClick={() => setOpen(false)}>
+          All Products
+        </NavLink>
+        <NavLink to="/about" onClick={() => setOpen(false)}>
+          About
+        </NavLink>
+        <NavLink to="/contact" onClick={() => setOpen(false)}>
+          Contact Us
+        </NavLink>
+      </nav>
+    </div>
+  </>
+)}
+
     </nav>
   );
 };

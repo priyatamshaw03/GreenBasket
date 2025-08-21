@@ -75,6 +75,7 @@ import masala_spices from "./masala_spices.png";
 import googleFavicon from "./googleFavicon.png";
 import user_icon from "./user_icon.svg"
 import email_icon from "./email_icon.svg"
+import close_icon from "./close_icon.svg"
 import delete_icon from "./delete_icon.svg"
 import money from "./money.svg"
 import user from "./user.svg"
@@ -89,6 +90,7 @@ import excitedWomenImage from "./excitedWomenImage.png"
 export const assets = {
   user_icon,
   email_icon,
+  close_icon,
   contact_us,
   logo,
   user,
