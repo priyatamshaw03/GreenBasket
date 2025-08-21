@@ -98,7 +98,7 @@ const AddAddress = () => {
             </button>
           </form>
         </div>
-        <img src={assets.add_address_iamge} alt="Add Address" className='zmb-16 md:mt-0 w-full sm:w-1/2 sm:ml-2 md:max-w-xl' />
+        <img src={assets.add_address_iamge} alt="Add Address" className='zmb-16 md:mt-0 hidden md:block w-full sm:w-1/2 sm:ml-2 md:max-w-xl' />
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ const Contact = () => {
                 </button>
             </div>
         </form>
-        <img src={assets.contact_us} alt="contact" className='md:mr-16 mb-16 md:mt-0 sm:w-1/2 md:max-w-xl' />
+        <img src={assets.contact_us} alt="contact" className='md:mr-16 mb-16 hidden md:block md:mt-0 sm:w-1/2 md:max-w-xl' />
     </div>
     );
 }
